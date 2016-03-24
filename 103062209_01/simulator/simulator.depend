@@ -1,0 +1,85 @@
+# depslib dependency file v1.0
+1458737951 source:c:\users\user\desktop\simulator\imem.c
+	"iMem.h"
+	<stdlib.h>
+	<stdio.h>
+
+1458737905 c:\users\user\desktop\simulator\imem.h
+
+1458761230 source:c:\users\user\desktop\simulator\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"loadfile.h"
+	"decode.h"
+	"global.h"
+	"doInstruct.h"
+
+1458753776 c:\users\user\desktop\simulator\decode.h
+
+1458748108 c:\users\user\desktop\simulator\loadfile.h
+
+1458753556 source:c:\users\user\desktop\simulator\loadfile.c
+	"loadfile.h"
+	"global.h"
+	<stdlib.h>
+	<stdio.h>
+
+1458761104 source:c:\users\user\desktop\simulator\decode.c
+	"global.h"
+	"decode.h"
+	<stdlib.h>
+	<stdio.h>
+
+1458761148 c:\users\user\desktop\simulator\global.h
+
+1458789978 c:\users\user\desktop\simulator\doinstruct.h
+
+1458756273 c:\users\user\desktop\simulator\doinstruct.c
+	"global.h"
+	"doInstruct.h"
+	<stdio.h>
+	<stdlib.h>
+
+1458761202 source:c:\users\user\desktop\simulator\doinstruct.c
+	<stdio.h>
+	<stdlib.h>
+	"global.h"
+	"doInstruct.h"
+
+1458830063 source:c:\users\nthucs\desktop\simulator\decode.c
+	"global.h"
+	"decode.h"
+	"doInstruct.h"
+	<stdlib.h>
+	<stdio.h>
+
+1458829635 c:\users\nthucs\desktop\simulator\global.h
+
+1458830063 c:\users\nthucs\desktop\simulator\decode.h
+
+1458753558 source:c:\users\nthucs\desktop\simulator\loadfile.c
+	"loadfile.h"
+	"global.h"
+	<stdlib.h>
+	<stdio.h>
+
+1458748110 c:\users\nthucs\desktop\simulator\loadfile.h
+
+1458830236 source:c:\users\nthucs\desktop\simulator\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"loadfile.h"
+	"decode.h"
+	"global.h"
+	"doInstruct.h"
+
+1458789980 c:\users\nthucs\desktop\simulator\doinstruct.h
+
+1458830122 source:c:\users\nthucs\desktop\simulator\doinstruct.c
+	<stdio.h>
+	<stdlib.h>
+	"global.h"
+	"doInstruct.h"
+
