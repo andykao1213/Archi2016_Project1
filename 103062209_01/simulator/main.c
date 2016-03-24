@@ -10,10 +10,10 @@
 
 int main()
 {
-	int i;
 
 	read();
-	for(i=0; i<1024; i++)
+
+    opdecode();
 
 
 	return 0;

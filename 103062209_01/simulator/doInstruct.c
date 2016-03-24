@@ -19,70 +19,60 @@ void doRInstruct()
         case add:
             reg[rd] = reg[rs] + reg[rt];
             PC += 4;
-            //printf("add %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             break;
         case addu:
             reg[rd] = reg[rs] + reg[rt];
             PC += 4;
-            //printf("addu %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             break;
         case sub:
             reg[rd] = reg[rs] - reg[rt];
-            //printf("sub %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             PC += 4;
             break;
         case And:
             reg[rd] = reg[rs] & reg[rt];
-            //printf("and %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             PC += 4;
             break;
         case Or:
             reg[rd] = reg[rs] | reg[rt];
-            //printf("or %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             PC += 4;
             break;
         case Xor:
             reg[rd] = reg[rs] ^ reg[rt];
-            //printf("xor %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             PC += 4;
             break;
         case nor:
             reg[rd] = ~(reg[rs] | reg[rt]);
-            //printf("nor %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             PC += 4;
             break;
         case nand:
             reg[rd] = ~(reg[rs] & reg[rt]);
-            //printf("nand %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             PC += 4;
             break;
         case slt:
             reg[rd] = (int)reg[rs] < (int)reg[rt];
-            //printf("slt %d, %d = %d\n", reg[rs], reg[rt], reg[rd]);
             PC += 4;
             break;
         case sll:
             reg[rd] = reg[rs] << shamt;
-            //printf("sll %d = %d\n", reg[rs], reg[rd]);
             PC += 4;
             break;
         case srl:
             reg[rd] = reg[rs] >> shamt;
-            //printf("srl %d = %d\n", reg[rs], reg[rd]);
             PC += 4;
             break;
         case sra:
             reg[rd] = (int)reg[rs] >> shamt;
-            //printf("sra %d = %d\n", reg[rs], reg[rd]);
             PC += 4;
             break;
         case jr:
+            printf("jr");
             PC = reg[rs];
-            //printf("jr %d\n", reg[rs]);
             PC += 4;
             break;
+        default:
+            break;
     }
-
+    printf("funct: %02x rs: %d rt: %d rd: %d shamt: %d\n", funct, reg[rs], reg[rt], reg[rd], shamt);
 }
 
 void doIInstruct()
@@ -122,6 +112,7 @@ void doIInstruct()
             PC += 4;
             break;
         case lbu:
+
             if(findSignBit(immediate) == 1) immediate = -immediate;
             reg[rt] =(reg[rt] << 8) + dmemory[reg[rs] + immediate +i];
             PC += 4;
@@ -181,19 +172,30 @@ void doIInstruct()
             if(findSignBit(immediate) == 1) immediate = -immediate;
             if(reg[rs] == reg[rt])
                 PC = PC + 4 + 4*immediate;
+            else
+                PC += 4;
             break;
         case bne:
             if(findSignBit(immediate) == 1) immediate = -immediate;
             if(reg[rs] != reg[rt])
                 PC = PC + 4 + 4*immediate;
+            else
+                PC += 4;
             break;
         case bgtz:
             if(findSignBit(immediate) == 1) immediate = -immediate;
             if(reg[rs] > 0)
                 PC = PC + 4 + 4*immediate;
+            else
+                PC += 4;
+            break;
+        default:
             break;
 
     }
+
+    printf("op: %02x rs: %d rt:%d im:%d\n", opcode, reg[rs], reg[rt], immediate);
+
 }
 
 void doJInstruct()
@@ -211,4 +213,6 @@ void doJInstruct()
         PC = PC << 28;
         PC = PC | 4*address;
     }
+
+    printf("op: %02x address: %08x\n", opcode, address);
 }

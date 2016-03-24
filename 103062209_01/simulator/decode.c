@@ -5,23 +5,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void opdecode(/*int j*/)
+void opdecode()
 {
+    unsigned tmp, i, start, j;
 
-    unsigned tmp = 0, i, start = PC/*+j*4*/;
-    for(i=0; i<4; i++, start++)
-        tmp = (tmp << 8) + imemory[start];
+    while(1){
 
-    opcode = tmp;
-    opcode = opcode >> 26;
-    if(opcode == 0x00)
-        rdecode(tmp);
-    else if(opcode == 0xFFF)
-        halt();
-    else if (opcode == 0x02 || opcode == 0x03)
-        jdecode(tmp);
-    else
-        idecode(tmp);
+        tmp = 0, start = PC, funct = 0;
+        for(i=0; i<4; i++)
+            tmp = (tmp << 8) + imemory[start + i];
+
+        opcode = tmp;
+        opcode = opcode >> 26;
+        if(opcode == 0x00)
+            rdecode(tmp);
+        else if(opcode == 0x3F)
+            return;
+        else if (opcode == 0x02 || opcode == 0x03)
+            jdecode(tmp);
+        else
+            idecode(tmp);
+
+    }
 
 }
 
@@ -43,8 +48,6 @@ void rdecode(unsigned tmp)
     rd = tmp;
     rd = rd << 16 >> 27;
 
-    printf("%5x, %5x, %5x, %5x, %6x\n", rs, rt, rd, shamt, funct);
-
     doRInstruct();
 
 }
@@ -61,10 +64,7 @@ void idecode(unsigned tmp)
     immediate = tmp;
     immediate = immediate << 16 >> 16;
 
-     printf("%5x, %5x, %16x\n", rs, rt, immediate);
-
-
-     doIInstruct();
+    doIInstruct();
 
 }
 
@@ -74,16 +74,10 @@ void jdecode(unsigned tmp)
     address = tmp;
     address = address << 6 >> 6;
 
-    printf("%26x", address);
-
     doJInstruct();
 
 }
 
-void halt()
-{
-    hal = 0;
-}
 
 
 

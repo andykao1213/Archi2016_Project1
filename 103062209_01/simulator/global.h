@@ -23,7 +23,7 @@ int immediate;
 
 unsigned numOfInstr;
 
-int hal;
+//int hal;
 
 #define add  0x20
 #define addu 0x21

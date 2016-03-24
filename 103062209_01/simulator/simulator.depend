@@ -47,16 +47,16 @@
 	"global.h"
 	"doInstruct.h"
 
-1458830063 source:c:\users\nthucs\desktop\simulator\decode.c
+1458839942 source:c:\users\nthucs\desktop\simulator\decode.c
 	"global.h"
 	"decode.h"
 	"doInstruct.h"
 	<stdlib.h>
 	<stdio.h>
 
-1458829635 c:\users\nthucs\desktop\simulator\global.h
+1458839290 c:\users\nthucs\desktop\simulator\global.h
 
-1458830063 c:\users\nthucs\desktop\simulator\decode.h
+1458839949 c:\users\nthucs\desktop\simulator\decode.h
 
 1458753558 source:c:\users\nthucs\desktop\simulator\loadfile.c
 	"loadfile.h"
@@ -66,7 +66,7 @@
 
 1458748110 c:\users\nthucs\desktop\simulator\loadfile.h
 
-1458830236 source:c:\users\nthucs\desktop\simulator\main.c
+1458832274 source:c:\users\nthucs\desktop\simulator\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -75,11 +75,47 @@
 	"global.h"
 	"doInstruct.h"
 
-1458789980 c:\users\nthucs\desktop\simulator\doinstruct.h
+1458831231 c:\users\nthucs\desktop\simulator\doinstruct.h
 
-1458830122 source:c:\users\nthucs\desktop\simulator\doinstruct.c
+1458839812 source:c:\users\nthucs\desktop\simulator\doinstruct.c
 	<stdio.h>
 	<stdlib.h>
+	"global.h"
+	"doInstruct.h"
+
+1458839942 source:c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\decode.c
+	"global.h"
+	"decode.h"
+	"doInstruct.h"
+	<stdlib.h>
+	<stdio.h>
+
+1458839290 c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\global.h
+
+1458839949 c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\decode.h
+
+1458831231 c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\doinstruct.h
+
+1458840636 source:c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\doinstruct.c
+	<stdio.h>
+	<stdlib.h>
+	"global.h"
+	"doInstruct.h"
+
+1458753558 source:c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\loadfile.c
+	"loadfile.h"
+	"global.h"
+	<stdlib.h>
+	<stdio.h>
+
+1458748110 c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\loadfile.h
+
+1458832274 source:c:\users\nthucs\desktop\archi2016_project1\103062209_01\simulator\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"loadfile.h"
+	"decode.h"
 	"global.h"
 	"doInstruct.h"
 
